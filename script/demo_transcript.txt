@@ -1,0 +1,934 @@
+0:00
+Hello, everybody, and welcome to an absolutely massive TensorFlow slash machine learning
+0:05
+slash artificial intelligence course. Now, please stick with me for this short introduction, as I am going to give you a lot of important information regarding the course content,
+0:14
+the resources for the course, and what you can expect after going through this. Now, first, I will tell you who this course is aimed for. So this course is aimed for people
+0:23
+that are beginners in machine learning and artificial intelligence, or maybe have a little bit of understanding but are trying to get better, but do have a basic fundamental knowledge
+0:32
+of programming and Python. So this is not a course you're going to take if you haven't done any programming before, or if you don't know any Python syntax in general, it's gonna
+0:41
+be highly advised that you understand the basic syntax behind Python, as I'm not going to be explaining that throughout this course. Now, in terms of your instructor for this
+0:48
+course, that is going to be me, my name is Tim, some of you may know me, as tech with Tim, from my YouTube channel, right teach all kinds of different programming topics.
+0:56
+And I've actually been working with Free Code Camp and posted some of my series on their channel as well. Now let's get into the course break down and talk about exactly what you're
+1:04
+going to learn and what you can expect from this course. So as this course is geared towards beginners, and people just getting started in the machine learning and AI world, we're
+1:12
+gonna start by breaking down exactly what machine learning and artificial intelligence is. So talking about what the differences are, between them, the different types of
+1:20
+machine learning, reinforcement learning, for example, versus neural networks versus simple machine learning, we're gonna go through all those different differences. And then
+1:29
+we're going to get into a general introduction of TensorFlow. Now, for those of you that don't know, TensorFlow is a module developed and maintained by Google, which can be used
+1:37
+within Python to do a ton of different scientific computing, machine learning and artificial intelligence applications. We're gonna be working with that through the entire tutorial
+1:45
+series. And after we do that general introduction to TensorFlow, we're going to get into our core learning algorithms. Now, these are the learning algorithms that you need to know
+1:53
+before we can get further into machine learning, they build a really strong foundation, they're pretty easy to understand and implement. And they're extremely powerful. After we do that,
+2:02
+we're going to get into neural networks discuss all the different things that go into how neural networks work, how we can use them, and then do a bunch of different examples.
+2:09
+And then we're going to get into some more complex aspects of machine learning and artificial intelligence and get to convolution neural networks, which can do things like image recognition
+2:17
+and detection. And then we're going to get into recurrent neural networks, which are going to do things like natural language processing, chatbots, text processing, all those different
+2:26
+kinds of things, and finally ended off with reinforcement learning. Now, in terms of resources for this course, there are a ton, and what we're going to be doing to make this really
+2:35
+easy for you, and for me, is doing everything through Google Collaboratory. Now, if you haven't heard of Google Collaboratory, essentially, it's a collaborative coding environment that
+2:43
+runs an iPython Notebook in the cloud, on a Google machine where you can do all of your
+2:49
+machine learning for free. So you don't need to install any packages, you don't need to use Pip, you don't need to get your environment set up, all you need to do is open a new Google
+2:57
+Collaboratory window, and you can start writing code. And that's what we're gonna be doing in this series. If you look in the description right now, you will see links to all of the
+3:04
+notebooks that I use throughout this guide. So if there's anything that you want to cleared up, if you want the code for yourself, if you want just text based descriptions of the
+3:12
+things that I'm saying, you can click those links and gain access to them. So with that being said, I'm very excited to get started, I hope you guys are as well. And let's go
+3:20
+ahead and get into the content.
+3:27
+So in this first section, I'm going to spend a few minutes discussing the difference between artificial intelligence, neural networks and machine learning. And the reason we need to
+3:35
+go into this is because we're going to be covering all of these topics throughout this course. So it's vital that you guys understand what these actually mean. And you can kind
+3:42
+of differentiate between them. So that's what we're going to focus on now. Now, quick disclaimer here, just so everyone's aware, I'm using something called Windows Inc. This just default
+3:50
+comes with Windows, I have a drawing tablet down here. And this is what I'm going to be using for some of the explanatory parts, but there's no real coding, just to kind of illustrate
+3:58
+some concepts and topics to you. Now I have very horrible handwriting, I'm not artistic whatsoever, programming is more definitely more of my thing than, you know, drawing and
+4:08
+doing diagrams and stuff. But I'm going to try my best. And this is just the way that I find I can convey information the best to you guys. So anyways, let's get started and
+4:16
+discuss the first topic here, which is artificial intelligence. Now, artificial intelligence is a huge hype nowadays. And it's funny because a lot of people actually don't know what this
+4:25
+means. Or they tried to tell people that what they've created is not artificial intelligence, when in reality, it actually is. Now the kind of formal definition of AI and I'm just gonna
+4:35
+read it off of my slide here to make sure that I'm not messing this up, is the effort to automate intellectual tasks normally performed by humans. Now, that's a fairly big definition,
+4:45
+right? What is considered an intellectual task and, you know, really, that doesn't help
+4:50
+us too much. So what I'm going to do is bring us back to when AI was first created to kind of explain to you how AI has evolved and what it really started out being so back in 1950
+4:59
+There was kind of a question being asked by scientists and researchers, can computers
+5:05
+think, can we get them to figure things out? Can we get away from hard coding? And you know, having like, Can we get a computer to think can it do its own thing? So that was
+5:13
+kind of the question that was asked. And that's when the term artificial intelligence was kind of coined and created. Now back then AI was simply a predefined set of rules. So
+5:23
+if you're thinking about an AI for maybe like tic tac toe, or an AI for chess, all they would have had back then, is predefined rules that humans had come up with and typed into
+5:32
+the computer in code. And the computer would simply execute those set of rules and follow those instructions. So there was no deep learning machine learning crazy algorithms happening,
+5:42
+it was simply if you wanted the computer to do something, you would have to tell it beforehand, say you're in this position. And this happens, do this. And that's what AI was. And very
+5:51
+good AI was simply just a very good set of rules were a ton of different rules that humans
+5:56
+had implemented into some program, you could have AI programs that are stretching, you know, half a million lines of code, just with tons and tons and tons of different rules
+6:04
+that have been created for that AI. So just be aware that AI does not necessarily mean
+6:10
+anything crazy, complex or super complicated. But essentially, if you're trying to simulate
+6:15
+some intellectual task, like playing a game that a human would do with a computer, that is considered AI, so even a very basic artificial intelligence for Tic Tac Toe game where it
+6:25
+plays against you, that is still considered AI. And if we think of something like Pac Man, right, where we have, you know, our little ghost, and this will be my rough sketch of
+6:33
+a ghost, we have our Pac Man guy who will just be this. Well, when we consider this ghost AI, what it does is it attempts to find and kind of simulate how we get to Pac Man,
+6:45
+right. And the way this works is just using a very basic pathfinding algorithm. This has nothing to do with deep learning, or machine learning or anything crazy. But this is still
+6:53
+considered artificial intelligence, the computer is figuring out how it can kind of play and do something by following an algorithm. So we don't necessarily need to have anything
+7:02
+Crazy, Stupid complex to be considered AI, it simply needs to just be simulating some
+7:07
+intellectual human behavior. That's kind of the definition of artificial intelligence. Now, obviously, today, AI has evolved into a much more complex field where we now have
+7:16
+machine learning and deep learning and all these other techniques, which is what we're going to talk about now. So what I want to start by doing is just drawing a circle here.
+7:24
+And I want to label this circle and say, A, I like that. So this is going to define AI,
+7:29
+because everything I'm about to put inside of here is considered artificial intelligence. So now, let's get into machine learning. So what I'm going to do is draw another circle
+7:38
+inside of here. And we're going to label this circle, ml for machine learning. Now notice
+7:44
+I put this inside of the artificial intelligence circle. This is because machine learning is a part of artificial intelligence. Now, what is machine learning? Well, what we talked
+7:54
+about previously, was kind of the idea that AI used to just be a predefined set of rules,
+8:00
+right? Where what would happen is, we would feed some data, we would go through the rules by and then analyze the data with the rules. And then we'd spit out some output, which
+8:08
+would be you know, what we're going to do. So in the classic example of chess, say, we're in check, what we pass that board information to the computer, it looks at it sets of rules,
+8:17
+it determines we're in check, and then it moves us somewhere else. Now, what is machine learning in contrast to that? Well, machine learning is kind of the first field that actually
+8:26
+figuring out the rules for us. So rather than us hard coding the rules into the computer,
+8:31
+what machine learning attempts to do is take the data and take what the output should be, and figure out the rules for us.
+8:38
+So you'll often hear that, you know, machine learning requires a lot of data. And you need a ton of examples and, you know, input data to really train a good model. Well, the reason for that is
+8:48
+because the way that machine learning works is it generates the rules for us. We give it some input data, we give it what the output data should be. And then it looks at that
+8:57
+information and figures out what rules can we generate, so that when we look at new data,
+9:02
+we can have the best possible output for that. Now, that's also why a lot of the times, machine learning models do not have 100% accuracy, which means that they may not necessarily
+9:12
+get the correct answer every single time. And our goal when we create machine learning models is to raise our accuracy as high as possible, which means it's going to make the
+9:20
+fewest mistakes possible. Because just like a human, you know, our machine learning models, which are trying to simulate, you know, human behavior can make mistakes. But to summarize
+9:29
+that, essentially machine learning the difference between that and kind of, you know, algorithms
+9:35
+and basic artificial intelligence is the fact that rather get that rather than us the programmer
+9:40
+giving it the rules. It figures out the rules for us. And we might not necessarily know explicitly what the rules are when we look at machine learning and create machine learning
+9:49
+models. But we know that we're giving some input data, we're giving the expected output data, and then it looks at all of that information does some algorithms, which we'll talk about
+9:58
+later on that and figures out the rules for us. So that later when we give it some input data, and we don't know the output data, it can use those rules that it's figured out
+10:07
+from our examples and all that training data that we gave it to generate some output. Okay, so that's machine learning. Now we've covered AI and machine learning. And now it's time
+10:16
+to cover neural networks or deep learning. Now, this circle gets to go right inside of the machine learning right here, I'm just gonna label this one and n, which stands for
+10:25
+neural networks. Now, neural networks get a big hype, they're usually what the first, you know, when you get into machine learning, you want to learn neural networks are kind
+10:33
+of like neural networks are cool, they're capable of a lot. But let's discuss what these really are. So the easiest way to define a neural network is it as a form of machine
+10:42
+learning that uses a layered representation of data. Now, we're not going to really understand
+10:47
+this completely right now. But as we get further in, that should start to make more sense as a definition. But what I need to kind of illustrate to you is that in the previous example, where
+10:56
+we just talked about machine learning, essentially what we had is we had some input bubbles, which I'm going to define this these, we had some set of rules that is going to be in between
+11:04
+here, and then we had some output. And what would happen is we feed this input to this set of rules, something happens in here, and then we get some output. And then that is
+11:14
+what you know, our program does, that's what we get from the model, we pretty much just have two layers, we have kind of the input layer, the output layer, and the rules are
+11:22
+kind of just what connects those two layers together. Now in neural networks, and what we call deep learning, we have more than two layers. Now, I'm just trying to erase all
+11:31
+this quickly. So I can show you that. So let's say and all journalists want another color, because why not? If we're talking about neural networks, what we might have, and this will
+11:40
+vary, and I'll talk about this in a second is the fact that we have an input layer, which will be our first layer of data, we could have some layers in between this layer, that
+11:49
+are all connected together. And then we could have some output layer. So essentially, what
+11:54
+happens is, our data is going to be transformed through different layers, and different things
+12:00
+are going to happen, there's gonna be different connections between these layers. And then eventually, we will reach an output. Now it's very difficult to explain neural networks
+12:09
+without going completely in depth. So we'll cover a few more notes that I have here. Essentially,
+12:14
+in neural networks, we just have multiple layers, that's kind of the way to think of them. And as we see machine learning, you guys should start to understand this more.
+12:22
+But just understand that we're dealing with multiple layers. And a lot of people actually call this a multi stage information extraction process. Now, I did not come up with that
+12:31
+term. I think that's from a book or something. But essentially, what ends up happening is we have our data at this first layer, which is that input information, which we're going
+12:39
+to be passing to the model that we're going to do something with, It then goes to another layer, where it will be transformed, it will change into something else, using a predefined
+12:48
+kind of set of rules and weights that we'll talk about later, then it will pass through
+12:54
+all of these different layers were different kind of features of the data, which again, we'll discuss in a second will be extracted will be figured out will be found until eventually,
+13:03
+we reach an output layer where we can kind of combine everything we've discovered about the data into some kind of output that's meaningful to our program. So that's kind of the best
+13:12
+that I can do to explain neural networks without going on to a deeper level, I understand that a lot of you probably don't understand what they are right now. And that's totally fine.
+13:20
+But just know that there are layered representation of data, we have multiple layers of information.
+13:26
+Whereas in standard machine learning, we only have you know, one or two layers, and then artificial intelligence in general, we don't necessarily have to have like a predefined
+13:35
+set of layers. Okay, so that is pretty much it for neural networks, there's one last thing I will say about them is that
+13:42
+they're actually not modeled after the brain. So a lot of people seem to think that neural networks are modeled after the brain and the fact that you have neurons firing in your
+13:50
+brain. And that can relate to neural networks. Now, there is a biological inspiration for the name neural networks in the way that they work from, you know, human biology, but is
+14:00
+not necessarily modeled about the way that our brain works. And in fact, we actually don't really know how a lot of the things in our brain operate and work. So it would
+14:08
+be impossible for us to say that neural networks are modeled after the brain, because we actually don't know how information is kind of happens and occurs and transfers through our brain.
+14:17
+Or at least we don't know enough to be able to say this is exactly what it is a neural network. So anyways, that was kind of the last point there. Okay, so now we need to
+14:25
+talk about data. Now data is the most important part of machine learning and artificial intelligence,
+14:31
+neural networks as well. And it's very important that we understand how important data is and
+14:36
+what the different kinds of parts of it are, because they're going to be referenced a lot in any of the resources that we're using. Now what I want to do is just create an example
+14:44
+here, I'm going to make a data set that is about students final grades in like a school
+14:49
+system. So essentially, we're gonna make this a very easy example. We're all we're gonna have for this data set is we're going to have information about students. So we're gonna
+14:57
+have their midterm one grade, their midterm to grade, and then we're gonna have their final grade. So I'm just gonna say mid term, one. And again, excuse my handwriting here,
+15:08
+it's not the easiest thing to write with this drawing tablet. And then I'll just do final.
+15:14
+So this is going to be our data set. And we'll actually see some similar data sets to this as we go through and do some examples later on. So for student one, which we'll just put
+15:22
+some students here, we're going to have their midterm one grade, maybe that's a 70, their midterm to grade, maybe that was an 80. And then let's say their final was like their
+15:32
+final term grade, not just the mark on the final exam, let's give them a 77. Now for
+15:37
+midterm one can give someone a 60, maybe we give them a 90, and then we determine that the final grade on their exam was, let's say, an 84. And then we can do something with maybe
+15:47
+a lower grade here, so 4050, and then maybe they got a 38, or something in the final grade.
+15:55
+Now, obviously, we could have some other information here that we're admitting like maybe there was some exams, some assignments, whatever some other things they did that contributed
+16:02
+to their grade. But the problem that I want to consider here is the fact that given our midterm, one grade and our midterm to grade and our final grade, how can I use this information
+16:12
+to predict any one of these three columns. So if I were given a student's midterm, one
+16:17
+grade, and I were given a student's final grade, how could I predict their midterm to grade. So this is where we're going to talk about features and labels. Now, whatever information
+16:28
+we have that is the input information, which is the information we will always have that we need to give to the model to get some output is what we call our features. So in the example
+16:37
+where we're trying to predict midterm two, and let's just do this and highlight this in red, so we understand what we would have as our features, our input information are
+16:46
+going to be midterm one. And finally, because this is the information we're going to use
+16:51
+to predict something it is the input, it is what we need to give the model. And if we're training a model to look at midterm one and final grade, whenever we want to make a new
+17:00
+prediction, we need to have that information to do so. Now, what's highlighted in red, so this midterm two here is what we would call the label or the output. Now, the label
+17:11
+is simply what we are trying to look for or predict. So when we talk about features versus
+17:16
+labels, features is our input information, the information that we have that we need to use to make a prediction. And our label is that output information that is just representing
+17:25
+you know what we're looking for. So when we feed our features to a model, he will give
+17:30
+to us a label. And that is kind of the point that we need to understand. So that was the basic here. And now I'm just going to talk a little bit more about data, because we will
+17:38
+get into this more as we continue going, and about the importance of it. So the reason why data is so important is this is kind of the key thing that we use to create models. So
+17:48
+whenever we're doing AI and machine learning, we need data, pretty much unless you're doing a very specific type of machine learning and artificial intelligence, which we'll talk
+17:56
+about later. Now for most of these models, we need tons of different data, we need tons of different examples. And that's because we know how machine learning works now, which
+18:04
+is essentially, we're trying to come up with rules for a data set, we have some input information,
+18:10
+we have some output information or some features and some labels, we can give that to a model and tell it to start training. And what it will do is come up with rules such that we
+18:19
+can just give some features to the model in the future. And then it should be able to give us a pretty good estimate of what the output should be. So when we're training,
+18:28
+we have a set of training data. And that is data where we have all of the features and
+18:33
+all of the labels. So we have all of this information, then when we're going to test the model or use the model later on, we would not have this midterm two information, we
+18:42
+wouldn't pass this in the model, we would just pass our features, which is midterm one and final and then we would get the output of midterm two. So I hope that makes sense.
+18:51
+That just means data is extremely important. If we're feeding incorrect data or data that we shouldn't be using to the model that could definitely result in a lot of mistakes. And
+19:00
+if we have incorrect output information or incorrect input information that is going to cause a lot of mistakes as well, because that is essentially what the model is using
+19:07
+to learn and to kind of develop and figure out what it's going to do with new input information. So anyways, that is enough of data. Now let's talk about the different types of machine
+19:16
+learning. Okay, so now that we've discussed the difference between artificial intelligence, machine learning and neural networks, we have a kind of decent idea about what data is in
+19:25
+the difference between features and labels. It's time to talk about the different types of machine learning specifically, which are unsupervised learning, supervised learning
+19:35
+and reinforcement learning. Now, these are just the different types of learning the different types of figuring things out. Now, different kinds of algorithms fit into these different
+19:43
+categories from within artificial intelligence within machine learning and within neural networks. So the first one we're going to talk about is supervised learning, which is
+19:52
+kind of what we've already discussed. So I'll just write supervised up here. Again, excuse
+19:57
+the handwriting. So supervised Learning. Now what is this? Well, supervised
+20:03
+learning is kind of everything we've already learned, which is we have some features. So we'll write our features like this, right, we have some features. And those features
+20:12
+correspond to some label or potentially labels, sometimes we might predict more than one information.
+20:18
+So when we have this information, we have the features, and we have the labels, what we do is we pass this information to some machine learning model, it figures out the
+20:26
+rules for us. And then later on, all we need is the features. And it will give us some labels using those rules. But essentially, what supervised learning is, is when we have
+20:35
+both of this information, the reason that's called supervised is because what ends up happening when we train our machine learning model is we pass the input information, it
+20:44
+makes some arbitrary prediction using the rules it already knows. And then it compares that prediction that it made to what the actual prediction is, which is this label. So we
+20:54
+supervise the model and we say, okay, so you predicted that the color was red, but really, the color of whatever we passed in should have been blue. So we need to tweak you just
+21:03
+a little bit so that you get a little bit better, and you move in the correct direction. And that's kind of the way that this works. For example, say we're predicting, you know,
+21:10
+student's final grade, well, if we predict that the final grade is 76, but the actual greatest 77, we were pretty close, but we're not quite there. So we supervise the model
+21:20
+and we say, Hey, we're gonna tweak you just a little bit, move you in the correct direction. And hopefully we get you to 77. And that is kind of the way to explain this, right, you
+21:29
+have the features. So you have the labels, when you pass the features, the model has some rules, and it's already built, it makes a prediction. And then it compares that prediction
+21:38
+to the label, and then re tweaks the model and continues doing this with 1000s upon 1000s
+21:43
+upon 1000s of pieces of data until eventually it gets so good that we can stop training. And that is what supervised learning is, it's the most common type of learning, it's definitely
+21:52
+the most applicable in a lot of instances. And most machine learning algorithms that are actually used use a form of supervised machine learning. A lot of people seem to
+22:02
+think that this is, you know, a less complicated, less advanced way of doing things. That is definitely not true. All of the different methods, I'm going to tell you have different
+22:09
+advantages and disadvantages. And this has a massive advantage when you have a ton of
+22:14
+information and you have the output of that information as well. But sometimes we don't have the luxury of doing that. And that's where we talk about unsupervised learning.
+22:23
+So hopefully that made sense for supervised learning, tried my best to explain that. And now let's go into or sorry, for supervised learning. Now let's go into unsupervised learning.
+22:33
+So if we know the definition of supervised learning, we should hopefully be able to come up with a definition of unsupervised learning, which is when we only have features. So given
+22:43
+a bunch of features like this, and absolutely no labels, no output for these features. What
+22:50
+we want to do is have the model come up with those labels for us. Now, this is kind of
+22:55
+weird. You're kind of like Wait, how does that work? Why would we even want to do that? Well, let's take this for an example. We have some axis some axes of data, okay. And we
+23:05
+have like a two dimensional data point. So I'm just gonna call this, let's say x, and let's say y, okay, and I'm gonna just put a bunch of dots on the screen that kind of
+23:14
+represents like maybe a scatterplot of some of our different data. And I'm just going to put some dots specifically closer to other ones,
+23:21
+just so you guys kind of get the point of what we're trying to do here. So let's do that. Okay, so let's say I have this data set, this here is what we're working with.
+23:30
+And we have these features, the features in this instance, are going to be x and y, right?
+23:36
+So X, and Y are my features. Now we don't have any output specifically for these data
+23:41
+points, what we actually want to do is we want to create some kind of model that can
+23:46
+cluster these data points, which means figure out kind of, you know, unique groups of data
+23:52
+and say, okay, so you during group one, you're in group two, you're in group three, and you're in group four, we may not necessarily know how many groups we have, although sometimes
+24:01
+we do. But what we want to do is just group them and kind of say, okay, we want to figure out which ones are similar. And we want to combine those together. So hopefully, what
+24:09
+we could do with an unsupervised machine learning model is pass all of these features, and then have the model create kind of these groupings. So like maybe this is a group, maybe this
+24:19
+is a group, maybe this is a group if we were having four groupings, and maybe if we had two groupings, we might get groupings that look something like this, right. And then
+24:28
+when we pass a new data point in, that could we could figure out what group that was a part of by determining, you know, which one is closer to. Now this is kind of a rough
+24:38
+example. It's hard to again, explain all of these without going very in depth into the specific algorithms. But unsupervised machine learning or just learning in general is when
+24:46
+you don't have some output information. You actually want the model to figure out the output for you. And you don't really care how it gets there. You just want it to get
+24:55
+there. And again, a good example is clustering data points, and we'll talk about some specific Applications of when we might even want to use that later on, just understand you have
+25:04
+the features, you don't have the labels, and you get the unsupervised model to kind of figure it out for you. Okay, so
+25:10
+now our last type, which is very different than the two types I just explained, is called reinforcement learning. Now personally reinforcement learning, and I don't even know if I want
+25:19
+to spell this because I feel like I'm going to mess it up. Reinforcement Learning is the
+25:25
+coolest type of machine learning in my opinion. And this is when you actually don't have any data, you have what you call an agent, and environment and a reward. I'm going to explain
+25:35
+this very briefly with a very, very, very simple example, because it's hard to get too far. So let's say we have a very basic game, you know, maybe we made this game ourselves.
+25:44
+And essentially, the objective of the game is to get to the fluc. Okay, that's all it is, we have some ground, you can move left to right, and we want to get to this flag.
+25:54
+Well, we want to train some artificial intelligence, some machine learning model that can figure out how to do this. So what we do is we call this our agent, we call this entire thing.
+26:06
+So this whole thing here, the environment. So I guess I could write that here. So and
+26:12
+by our meant, think I spelt that correctly. And then we have something called a reward.
+26:18
+And a reward is essentially what the agent gets when it does something correctly. So let's say the agent takes one step over this way. So let's say he's a new position is here,
+26:27
+I just want to keep drawing him. So I'm just gonna use a dot. Well, he got closer to the flag. So what I'm actually going to do is give him a plus two reward. So let's say he
+26:36
+moves again, closer to the flag, maybe I give him now plus one, this time, he got even closer.
+26:42
+And as he gets closer, I'll give him more and more reward. Now what happens if he moves
+26:48
+backwards? So let's erase this. And let's say that at some point in time, rather than moving closer to the for the flag, he moves backwards, well, he might get a negative reward.
+26:58
+Now, essentially, what the objective of this agent is to do is to maximize its reward.
+27:05
+So if you give it a negative reward for moving backwards, it's going to remember that it's going to say, Okay, at this position here, where I was standing, when I moved backwards,
+27:14
+I got a negative reward. So if I get to this position, again, I don't want to go backwards anymore, I want to go forwards, because that should give me a positive reward. And the
+27:25
+whole point of this is we have this agent that starts off with absolutely no idea, no
+27:31
+kind of, you know, knowledge of the environment. And what it does is it starts exploring, and
+27:36
+it's a mixture of randomly exploring and exploring using kind of some of the things that's figured out so far, to try to maximize its reward. So eventually, when the agent gets to the
+27:46
+flag, it will have the most the highest possible reward that it can have. And the next time
+27:51
+that we plug this agent into the environment, it will know how to get to the flag immediately,
+27:57
+because it's kind of figured that out, it's determined that in all these different positions, if I move here, this is the best place to move. So if I get in this position, move there.
+28:06
+Now this is again, hard to explain without more detailed examples, and going more mathematically and all that, but essentially, just understand we have the agent, which is kind of what the
+28:14
+thing is that's moving around in our environment, we have this environment wizard, which is just what the agent can move around in. And then we have a reward. And the reward is what
+28:24
+we need to figure out as the programmer a way to reward the agent correctly so that it gets to the objective in the best possible way. But the agent simply maximizes that reward.
+28:35
+So it just figures out where I need to go to maximize that reward, it starts at the beginning, kind of randomly exploring the environment, because it doesn't know any of
+28:42
+the rewards it gets at any of the positions. And then as it explores some more different areas, it kind of figures out the rules and the way that the environment works. And then
+28:50
+we'll determine how to reach the objective, which is whatever it is that is this a very simple example, you could train a reinforcement model to do this. And you know, like half
+28:58
+a second, right. But there is way more advanced examples. And there's been examples of reinforcement learning, like of AI is pretty much figuring out how to play games together how to it's
+29:08
+it's actually pretty cool some of the stuff that reinforcement learning is doing. And it's a really awesome kind of advancement in the field because it means we don't need
+29:15
+all this data anymore. We can just get this to kind of figure out how to do things for us and explore the environment and learn on its own. Now this can take a really long time,
+29:23
+this can take a very short amount of time really depends on the environment. But a real application of this is training AI's to play games, as you might be able to tell by kind
+29:31
+of what I was explaining here. And yeah, so that is kind of the fundamental differences between supervised, unsupervised and reinforcement learning, we're going to cover all three of
+29:40
+these topics throughout this course. And it's really interesting to see some of the applications we can actually do with this. So with that being said, I'm going to kind of end what
+29:47
+I'm going to call module one, which is just a general overview of the different topics, some definitions and getting a fundamental knowledge. And in the next one, what we're
+29:56
+gonna be talking about is what TensorFlow is, we're going to get into code In a little bit, and we're going to discuss some different aspects of TensorFlow and things we need to
+30:04
+know to be able to move forward and do some more advanced things.
+30:10
+So now in module two of this course, what we're going to be doing is getting a general introduction to TensorFlow, understanding what a tensor is understanding shapes and
+30:18
+data representation, and then how TensorFlow actually works on a bit of a lower level,
+30:23
+this is very important, because you can definitely go through and learn how to do machine learning without kind of gaining this information and knowledge. But it makes it a lot more difficult
+30:31
+to tweak your models and really understand what's going on, if you don't, you know, have that fundamental lower level knowledge of how TensorFlow actually works and operates.
+30:39
+So that's exactly what we're gonna cover here. Now, for those of you that don't know what TensorFlow is, essentially, this is an open source Machine Learning Library. It's one
+30:47
+of the largest ones in the world, it's one of the most well known and it's maintained and supported by Google. Now, TensorFlow, essentially allows us to do and create machine
+30:57
+learning models and neural networks, and all of that without having to have a very complex math background. Now, as we get further in, and we start discussing more in detail how
+31:05
+neural networks work, and machine learning algorithms actually function, you'll realize there's a lot of math that goes into this. Now, it starts off being very kind of fundamental,
+31:14
+like basic calculus and basic linear algebra. And then it gets much more advanced into things like gradient descent, and some more regression techniques and classification. And essentially,
+31:24
+you know, a lot of us don't know that we don't really need to know that, so long as we have a basic understanding of it, then we can use the tools that TensorFlow provides for us
+31:33
+to create models. And that's exactly what TensorFlow does. Now, what I'm in right now is what I call Google Collaboratory. I'm going to talk about this more in depth in a second.
+31:42
+But what I've done for this whole course, is I've transcribed very detailed everything
+31:47
+that I'm going to be covering through each module. So this is kind of the transcription of module one, which is the introduction to TensorFlow, you can see it's not crazy long.
+31:56
+But I wanted to do this so that any of you can follow along with kind of the text base and kind of my lecture notes, I almost want to call them as I go through the different
+32:04
+content. So in the description, there will be links to all of these different notebooks. This is in something called Google Collaboratory, which again, we're going to discuss in a second,
+32:12
+but you can see here that I have a bunch of text, and then it gets down to some different coding aspects. And what I'm going to be doing to make sure that I stay on track is simply
+32:20
+following along through this, I might deviate slightly, I might go into some other examples. This will be kind of everything I'm going to be covering through each module. So again,
+32:29
+to follow along, click the link in the description. Alright, so what can we do with TensorFlow?
+32:35
+Well, these are some of the different things I've listed them here. So I don't forget, we can do image classification, data clustering, regression, reinforcement learning, natural
+32:44
+language processing, and pretty much anything that you can imagine with machine learning. Essentially, what TensorFlow does, is gives us a library of tools that allow us to omit
+32:54
+having to do these very complicated math operations. It just does them for us. Now, there is a
+32:59
+bit that we need to know about them, but nothing too complex. Now let's talk about how TensorFlow actually works. So TensorFlow has two main components that we need to understand, to
+33:10
+figure out how operations and math are actually performed. Now we have something called graphs and sessions. Now, the way that tensor flow works, is it creates a graph of partial computations.
+33:21
+Now, I know this is gonna sound a little bit complicated, some of you guys just try to kind of forget about the complex vocabulary and follow along. But essentially, what we
+33:30
+do when we write code in TensorFlow is we create a graph. So if I were to create some variable, that variable gets added to the graph, and maybe that variable is the sum
+33:40
+or the summation of two other variables. What the graph will define now is say, you know,
+33:45
+we have variable one, which is equal to the sum of variable two and variable three. But
+33:51
+what we need to understand is that it doesn't actually evaluate that it simply states that
+33:57
+that is the computation that we've defined. So it's almost like writing down an equation
+34:02
+without actually performing any math, we kind of just, you know, have that equation there.
+34:07
+We know that this is the value, but we haven't evaluated it. So we don't know that the value is like 7%, we just know that it's the sum of, you know, vector one and vector two, or
+34:17
+it's the sum of this or it's the cross product, or the dot product, we just defined all of the different partial computations, because we haven't evaluated those computation yet.
+34:27
+And that is what is stored in the graph. And the reason that's called a graph is because different computations can be related to each other. For example, if I want to figure out
+34:36
+the value of vector one, but vector one is equal to the value of vector three plus vector
+34:42
+four, I need to determine the value of vector three and vector four, because before I can do that computation, so they're kind of linked together and I hope that makes a little bit
+34:51
+of sense. Now what is a session? Well session is essentially a way to execute part or the
+34:57
+entire graph. So when we start In a session, what we do is we start executing different
+35:03
+aspects of the graph. So we start at the lowest level of the graph where nothing is dependent on anything else, we have maybe constant values, or something like that. And then we move our
+35:12
+way through the graph, and start doing all of the different partial computations that we've defined. Now, I hope that this isn't too confusing. I know this is kind of a lot
+35:21
+of lingo you guys should will understand this as we go through. And again, you can read through some of these components here that I have in Collaboratory, if I'm kind of skipping
+35:28
+through anything you don't truly understand. But that is the way that graphs and sessions work, we won't go too in depth with them, we do need to understand that that is the
+35:37
+way TensorFlow works. And there's some times where we can't use a specific value in our code yet, because we haven't evaluated the graph, we haven't created a session and gotten
+35:46
+the values yet, which we might need to do before we can actually, you know, use some specific value. So that's just something to consider.
+35:53
+Alright, so now we're actually going to get into coding importing, installing TensorFlow. Now, this
+35:59
+is where I'm going to introduce you to Google Collaboratory and explain how you guys can follow along without having to install anything on your computer. And it doesn't matter if
+36:07
+you have like a really crappy computer, or even if you're on like an iPhone, per se, you can actually do this, which is amazing. So all you need to do is Google Google Collaboratory,
+36:17
+and create a new notebook. Now what Google Collaboratory is, is essentially a free Jupyter
+36:23
+Notebook in the cloud for you. The way this works is you can open up this notebook, you can see this is called I, py and B, I yeah, what is that I py and B, which I think just
+36:33
+stands for IPython notebook. And what you can do in here is actually write code and
+36:38
+write text as well. So this in here is what it's called, you know, Google Collaboratory notebook. And essentially, why it's called a notebook is because not only can you put
+36:47
+code but you can also put notes, which is what I've done here with these specific titles.
+36:52
+So you can actually use markdown inside of this. So if I open up one of these, you can see that I've used markdown text, to actually kind of create these sections. And yeah, that
+37:02
+is kind of how Collaboratory works. But what you can do in Collaboratory is forget about
+37:07
+having to install all of these modules. They're already installed for you. So what you're actually going to do when you open a Collaboratory window is Google is going to automatically
+37:17
+connect you to one of their servers or one of their machines that has all of this stuff done and set up for you. And you can start writing code and executing it off their machine
+37:26
+and seeing the result. So for example, if I want you to print hello, like this, and
+37:31
+I'll zoom in a little bit, so you guys can read this, all I do is like create a new code block, which I can do by clicking code. Like that I can delete one like that as well. And
+37:41
+I hit run. Now notice, give it a second, it does take longer than typically on your own machine, and we get Hello popping up here. So the great thing about Collaboratory is
+37:50
+the fact that we can have multiple code blocks, and we can run them in whatever sequence we want. So to create another code block, you can just you know, do another code block from
+37:59
+up here or but just by looking down here, you get code and you get text. And I can run this in whatever order I want. So I can do like print. Yes, for example, I can run Yes,
+38:09
+and we'll see the output of Yes, and then I can print hello one more time. And notice that it's showing me the number on this left hand side here on which these kind of code
+38:17
+blocks were run. Now all these code blocks can kind of access each other. So for example,
+38:23
+I do define funk, and we'll just take some parameter H and all we'll do is just print H, well, if I create another code block down here, so let's go code. I can call funk with
+38:33
+say, Hello, make sure I run this block first. So we define the function. Now we'll run funk
+38:39
+and notice we get the output Hello. So we can access all of the variables, all the functions, anything we've defined in other code blocks from code blocks that are below it, or code
+38:48
+blocks that are executed after it. Now another thing that's great about Collaboratory is the fact that we can import pretty much any module we can imagine. And we don't need to
+38:56
+install it. So I'm not actually going to be going through how to install TensorFlow completely. There is a little bit on how to install TensorFlow on your local machine inside of this notebook,
+39:06
+which I'll refer you to. But essentially, if you know how to use Pip, it's pretty straightforward. You can pip install TensorFlow or pip install TensorFlow GPU if you have a compatible GPU,
+39:15
+which you can check from the link that's in this notebook. Now, if I want to import something, what I can do is literally just write the import. So I can say import NumPy, like this.
+39:24
+And usually NumPy is a module that you need to install. But we don't need to do that here. It's already installed on the machine. So again, we hook up to those Google servers,
+39:32
+we can use their hardware to perform machine learning. And this is awesome. This is amazing. And it gives you performance benefits when you're running on like a lower kind of crappier
+39:40
+machine, right. So we can have a look at the RAM and the disk space of our computer, we can see we have 12 gigs of RAM. We're dealing with 107 gigabytes of data on our disk space.
+39:49
+And we can obviously, you know, look at that if we want, we can connect connect to our local runtime, which I believe connects to your local machine, but I'm not going to go
+39:56
+through all that. I just want to show you guys some basic components of Have Collaboratory. Now, some other things that are important to understand is this runtime tab, which you
+40:04
+might see me use. So restart runtime essentially clears all of your output, and just restarts
+40:10
+whatever's happened. Because the great thing with Collaboratory is since I can run specific code blocks, I don't need to execute the entire thing of code every time I want to run something,
+40:20
+if I've just made a minor change in one code block, I can just run that code. Sorry, I can just run that code block. I don't need to run everything before it or even everything
+40:29
+after it right. But sometimes you want to restart everything and just rerun everything.
+40:34
+So to do that, you click Restart runtime, that's just going to clear everything you have. And then restart and run all will restart the runtime as well as run every single block
+40:43
+of code you have in sequential order in which it shows up in the thing. So I recommend you
+40:49
+guys open up one of these windows, you can obviously follow along with this notebook if you want. But if you want to type it out on your own and kind of mess with it, open
+40:56
+up a notebook, save it, it's very easy. And these are again, extremely similar to Jupyter Notebooks or Jupyter notebooks. They're pretty much the same. Okay, so that is kind of the
+41:07
+Google Collaboratory aspect how to use that. Let's get into importing TensorFlow. Now, this is going to be kind of specific to Google Collaboratory. So you can see here, these
+41:16
+are kind of the steps we need to follow to import TensorFlow. So since we're working in Google Collaboratory, they have multiple versions of TensorFlow, they have the original
+41:24
+version of TensorFlow, which is 1.0, and the 2.0 version. Now to define the fact that we
+41:30
+want to use TensorFlow 2.0. Just because we're in this notebook, we need to write this line of code at the very beginning
+41:36
+of all of our notebooks. So percent, TensorFlow underscore version two point x. Now this is
+41:42
+simply just saying, we need to use TensorFlow two point x. So whatever version that is, and this is only required in a notebook, if you're doing this on your local machine in
+41:50
+a text editor, you're not going to need to write this. Now once we do that, we typically import TensorFlow as an alias name of TF. Now to do that, we simply import the TensorFlow
+42:00
+module and then we write as TF. If you're on your local machine, again, you're going to need to install TensorFlow first, to make sure that you're able to do this, but since
+42:08
+we're in Collaboratory, we don't need to do that. Now, since we've defined the fact we're using version two point x, when we print the TensorFlow version, we can see here that it
+42:17
+says version two, which is exactly what we're looking for. And then this is TensorFlow. 2.1. Point Oh. So make sure that you print your version you're using version 2.0. Because
+42:26
+there is a lot of what I'm using in this series that is kind of if you're in TensorFlow 1.0.
+42:32
+It's not going to work. So it's new in TensorFlow 2.0. Or it's been refactored and the names have been changed. Okay, so now that we've done that, we've imported TensorFlow, we've
+42:41
+got this here. And I'm actually going to go to my fresh notebook and just do this. So we'll just copy these lines over just so we have some fresh code, and I don't have all
+42:47
+this text that we have to deal with. So let's do this TensorFlow, let's import TensorFlow
+42:54
+as TF. And then we can print the TF dot version and have a look at that. So version. Okay,
+43:01
+so let's run our code. Here. We can see TensorFlow is already loaded. Oh, it says 1.0. So if you get this error, it's actually good. I ran into this where TensorFlow is already
+43:09
+been loaded, all you need to do is just restart your runtime. So I'm going to restart and run all just click Yes. And now we should see that we get that version 2.0. Once this
+43:17
+starts running, give it a second, TensorFlow 2.0 selected, we're going to import that module.
+43:24
+And there we go, we get version 2.0. Okay, so now it's time to talk about tensors. Now,
+43:29
+what is a tensor? Now tensor just immediately seems kind of like a complicated name. You're like, Alright, tensor like this is confusing. But what is well, obviously, this is going
+43:39
+to be a primary aspect of TensorFlow, considering the name similarities. And essentially, all
+43:44
+it is, is a vector generalized to higher dimensions. Now, what is a vector? Well, if you've ever
+43:50
+done any linear algebra, or even some basic kind of vector calculus, you should hopefully know what that is. But essentially, it is kind of a data point is kind of the way that
+43:59
+I like describe it. And the reason we call it a vector is because it doesn't necessarily have a certain coordinate. So like, if you're talking about a two dimensional data point,
+44:09
+you have, you know, maybe an x and a y value, or like an x one value and an x two value.
+44:15
+Now a vector can have any amount of dimensions in it, it could have one dimension, which simply means it just one number could have two dimensions, which means we're having two
+44:24
+numbers, so like an x and a y value. If we're thinking about a two dimensional graph, we'd have three dimensions if we're thinking about a three dimensional graph, so that would be
+44:32
+three data points, we get a four dimensions, if we're talking about sometimes some image data and some video data, five dimensions, and we can keep going going going with vectors.
+44:43
+So essentially, what a tensor is, and I'll just read this formal definition to make sure I haven't butchered anything that's from the actual TensorFlow website. A tensor is a generalization
+44:52
+of vectors and matrices to potentially higher dimensions. Internally, TensorFlow represented tensors as n dimensional arrays of base datatypes. Now we'll understand what that means in a
+45:01
+second. But hopefully, that makes sense. Now, since tensors are so important to TensorFlow,
+45:07
+they're kind of the main object that we're going to be working with manipulating and viewing. And it's the main object that's passed around through our program. Now, what we can
+45:16
+see here is each tensor represents a partially defined computation that will eventually produce
+45:21
+a value. So just like we talked about in the graphs and sessions, what we're going to do is when we create our program, we're going to be creating a bunch of tensors. And TensorFlow
+45:30
+is going to be creating them as well. And those are going to store partially defined computations in the graph. Later, when we actually build the graph and have the session
+45:40
+running, we will run different parts of the graph, which means we'll execute different tensors and be able to get different results from our tensors. Now each tensor has what
+45:48
+we call a data type and a shape. And that's what we're going to get into now. So a data
+45:53
+type is simply what kind of information is stored in the tensor. Now, it's very rare that we see any data types different than numbers, although there is the data type of
+46:01
+strings and a few others as well. But I haven't included all of them here, because they're not that important. But some examples we can see are float, 32, and 32, string and others.
+46:10
+Now, the shape is simply the representation of the tensor in terms of what dimension it
+46:16
+is. And we'll get to some examples, because I don't want to explain the shape until we can see some examples to really dial in. But here is some examples of how we would create
+46:24
+different tensors. So what you can do is you can simply do TF dot variable, and then you
+46:31
+can do the value and the datatype that your tensor is. So in this case, we've created
+46:36
+a string tensor, which stores one string, and it is TF dot strings, we define the data
+46:41
+type Second, we have a number tensor, which stores some integer value. And then that is
+46:47
+of type TF, int 16. And we have a floating point tensor, which stores a simple floating
+46:53
+point. Now these tensors have a shape of, I believe it's going to be one, which simply
+46:59
+means they are a scalar. Now a scalar value. And you might hear me say this a lot simply
+47:04
+means just one value. That's all it means. When we talk about like vector values, that
+47:10
+typically means more than one value. And we talked about matrices, we're having different it just it goes up. But scalar simply means one number. So yeah, that is what we get for
+47:21
+the different datatypes and creating tensors, we're not really going to do this very much in our program. But just for some examples here, that's how we do it. So we've imported
+47:29
+them. So I can actually run these. And I mean, we're not going to really get any output by running this code, because well, there's nothing to see. But now we're going to talk about
+47:36
+the rank slash degree of tensors. So another word for rank is degree. So these are interchangeably.
+47:42
+And again, this simply means the the, the number of dimensions involved in the tensor. So when we create a tensor of rank zero, which is what we've done up here, we call that a
+47:53
+scalar. Now, the reason this has rank zero is because it's simply one thing, we don't
+47:58
+have any dimension to this, there's like zero dimensionality, if that was even a word, it
+48:03
+just one value. Whereas here, we have an array. Now when we have an array or a list, we immediately
+48:10
+have at least rank one. Now the reason for that is because this array can store more
+48:16
+than one value in one dimension, right? So I can do something like test, I can do okay,
+48:22
+I could do, Tim, which is my name. And we can run this, and we're not going to get any output obviously here. But this is what we would call a rank one tensor. Because it is
+48:31
+simply one list one array, which means one dimension, and again, you know, that's also
+48:36
+like vector. Now, this, what we're looking at here is a rank two tensor. The reason this
+48:42
+is a rank two tensor is because we have a list inside of a list or in this case, multiple
+48:48
+lists inside of a list. So the way that you can actually determine the rank of a tensor
+48:53
+is the deepest level of nested lists, at least in Python with our representation. That's
+48:59
+what that is. So here, we can see we have a list inside of a list, and then another list inside of this upper list. So this would give us rank two. And this is what we typically
+49:08
+call a matrices. And this again, is going to be of TF dot strings. So that's the datatype
+49:14
+for this tensor variable. So all of these we've created are tensors. They have a data type, and they have some rank and some shape. And we're going to talk about the shape and
+49:22
+the second. So to determine the rank of a tensor, we can simply use the method TF dot
+49:28
+rank. So notice, when I run this, we get the shape, which is blank of rank two tensor,
+49:34
+that's fine. And then we get NumPy two, which simply means that this is of rank two. Now,
+49:39
+if I go for that rank one tensor and I print this out. So let's have a look at it, we get NumPy one here, which is telling us that this is simply of rank one. Now if I want to use
+49:50
+one of these ones up here and see what it is, so let's try it. We can do numbers, so TF dot rank number, so we'll print that here, and we get NumPy zero because that's rank
+49:59
+zero, right? So We'll go back to what we had, which was rank two tensor. But again, those are kind of the examples we want to look at. Okay, so shapes of a tensor. So this is a
+50:07
+little bit different now, what a shape simply tells us is how many items we have in each
+50:12
+dimension. So in this case, when we're looking at rank two, tensor dot shape, so we have
+50:18
+dot shape here, that's an attribute of all of our tensors, we get to two. Now let's look up here, what we have is Whoa, look at this two, and two, so we have two elements in the
+50:28
+first dimension, right, and then two elements in the second dimension. That's pretty much what this is telling us. Now let's look at the rank of or the shape of rank one tensor,
+50:37
+we get three. So because we only have a rank one, notice we only get one number, whereas
+50:44
+when we had rank two, we got two numbers. And it told us how many elements were in each of these lists, right? So if I go and I add another one here, like that, and we have a
+50:53
+look now at the shape, oops, I gotta run this first. So that's something Oh, can't convert
+50:58
+non square to tensor. Sorry, so I need to have a uniform amount of elements in each
+51:04
+one here, I can't just do what I did there. So we'll add a third element here. Now what we can do is run this shouldn't get any issues, let's have a look at the shape. And notice
+51:14
+we get now two, three. So we have two lists. And each of those lists have three elements
+51:20
+inside of them. So that's how the shape works. Now, I could go ahead and add another list in here if I wanted to. And I could say like, okay, okay.
+51:30
+Okay, so let's run this, hopefully, no errors looks like we're good. Now let's look at the
+51:35
+shape again. And now we get a shape of three, three, because we have three interior lists. And in each of those lists, we have three elements. And that is pretty much how that
+51:44
+works. Now, again, we could go even further here, we could put another list inside of here, that would give us a rank three tensor. And we'd have to do that inside of all of
+51:52
+these lists. And then what that would give us now would be three numbers representing how many elements we have in each of those different dimensions. Okay, so changing shape.
+52:03
+Alright, so this is what we need to do a lot of times when we're dealing with tensors in TensorFlow. So essentially, there is many different shapes that can represent the same
+52:13
+number of elements. So up here, we have three elements in a rank one tensor. And then here,
+52:19
+we have nine elements in a rank two tensor. Now, there's ways that we can reshape this
+52:25
+data so that we have the same amount of elements but in a different shape. For example, I could flatten this, right, take all of these elements, and throw them into a rank one tensor. That
+52:35
+simply is a length of nine elements. So how do we do that? Well, let me just run this code for us here and have a look at this. So what we've done is we've created tensor
+52:43
+one, that is TF dot ones, what this stands for is we're going to create a tensor that simply is populated completely
+52:51
+with ones of this shape. So shape 123, which means you know, that's the shape we're going
+52:58
+to get. So let's print this out and look at tensor one, just so I can better illustrate this. So tensor one, look at the shape that we have 123, right, so we have one interior
+53:10
+list, which we're looking at here. And then we have two lists inside of that list. And then each of those lists, we have three elements. So that's the shape we just defined. Now,
+53:19
+we have six elements inside of here. So there must be a way that we can reshape this data
+53:24
+to have six elements, but in a different shape. In fact, what we can do is reshape this into
+53:29
+a 231 shape, we're going to have two lists, right? We're going to have three inside of
+53:34
+those. And then inside of each of those, we're going to have one element. So let's have a look at that one. So let's have a look at tensor two, actually, what am I doing, we
+53:41
+print all we can print all of them here. So let's just print them and have a look at them. So when we look at tensor one, we saw this was a shape. And now we look at this tensor
+53:49
+two. And we can see that we have two lists, right? inside of each of those lists, we have three lists. And inside of each of those lists, we have one element. Now finally, our tensor
+53:59
+three is a shape of three, negative one, what is negative one, when we put negative one
+54:06
+here, what this does is infer what this number actually needs to be. So if we define an initial
+54:11
+shape of three, what this does is say, okay, we're going to have three lists. That's our
+54:16
+first level. And then we need to figure out based on how many elements we have in this reshape, which is the method we're using, which I didn't even talk about, which will
+54:25
+go into a second, what this next dimension should be. Now, obviously, this is going to need to be three. So three, three, right? Because we're gonna have three lists inside
+54:33
+of each of those lists we need to have are actually is that correct? Let's see if that's even the shape three to my bat. So this actually needs to change to three, two, I don't know
+54:41
+why I wrote three, three there. But you get the point. Right, so what this does, we have three lists, we have six elements. This number obviously needs to be two because well, three
+54:49
+times two is going to give us six and that is essentially how you can determine how many elements are actually in a tensor by just looking at its shape. Now this is the reshape
+54:58
+method where all we need to do is called TF dot reshape, give the tensor and give the shape we want to change it to so long as that's a valid shape. And when we multiply all the
+55:08
+numbers in here, it's equal to the number of elements in this tensor that will reshape it for us and give us that new shaped data. This is very useful. We'll use this actually
+55:16
+a lot as we go through TensorFlow. So make sure you're kind of familiar with how that works. Alright, so now we're moving on to types of tensors.
+55:25
+So there is a bunch of different types of tensors that we can use. So far, the only one we've looked at is variable. So we've created TF dot variables, and kind of just hard coded our own tensors,
+55:36
+we're not really going to do that very much. But just for that example. So we have these different types, we have constant placeholder sparsetensor variable, there's actually a
+55:45
+few other ones as well. Now, we're not going to really talk about these two that much,
+55:51
+although constant and variable are important to understand the difference between so we can read this, with the exception of variable, all of these tensors are immutable, meaning
+55:59
+their value may not change during execution. So essentially, all of these, when we create a tensor mean, we have some constant value, which means that whatever we've defined here,
+56:09
+it's not going to change, whereas the variable tensor could change. So that's just something
+56:14
+to keep in mind when we use variable. That's because we think we might need to change the value of that tensor later on. Whereas if we're using a constant value tensor, we cannot
+56:22
+change it. So that's just something to keep in mind, we can obviously copy it, but we can't change. Okay, so evaluating tensors, we're almost at the end of this section, I
+56:30
+know. And then we'll get into some more kind of deeper code. So there will be some times for this guide, we need to evaluate a tense, of course, so what we need to do to evaluate
+56:38
+a tensor is create a session. Now, this isn't really like, we're not going to do this that
+56:43
+much. But I just figured I'd mention it to make sure that you guys are aware of what I'm doing. If I start kind of typing this later on. Essentially, sometimes we have some
+56:51
+tensor object, and throughout our code, we actually need to evaluate it to be able to do something else. So to do that, all we need to do is literally just use this kind of default
+57:02
+template, a block of code, where we say with TF dot session, as some kind of session doesn't
+57:07
+really matter what we put here, then we can just do whatever the tensor name is dot eval,
+57:13
+and calling that will actually have TensorFlow, just figure out what it needs to do to find the value of this tensor, it will evaluate it, and then it will allow us to actually
+57:20
+use that value. So I put this in here, you guys can obviously read through this, if you want to understand some more in depth on how that works. And the source for this is straight
+57:28
+from the TensorFlow website, a lot of this is straight up copied from there. And I've just kind of added my own spin to it and made it a little bit easier to understand. Okay,
+57:35
+so we've done all that. So let's just go in here and do a few examples of reshaping just to make sure that everyone's kind of on the same page. And then we'll move on to actually
+57:43
+talking about some simple learning algorithms. So I want to create a tensor that we can kind of mess with and reshape, so what I'm going to do is just say t equals and we'll say TF
+57:52
+dot ones. Now, what TF dot ones does is just create, again, all the values to be ones that
+57:59
+we're going to have and whatever shape now we can also do zeros and zeros is just going to give us a bunch of zeros. And let's create some like crazy shape and just visualize this,
+58:07
+let's see like a five by five by five. So obviously, if we want to figure out how many elements are going to be in here, we need to multiply this value. So I believe this
+58:14
+is going to be 625, because that should be five to the power of four, so five times five times five times five. And let's actually print T and have a look at that and see what
+58:23
+this is. So we run this now. And you can see this is the output we're getting. So obviously, this is a pretty crazy looking tensor. but you get the point, right, and it tells us
+58:31
+the shape is 55555. Now watch what happens when I reshape this tensor. So if I want to
+58:38
+take all of these elements and flatten them out, what I could do is simply say, we'll say t equals TF dot reshape, like that. And we'll reshape the tensor t to just the shape
+58:51
+625. Now, if we do this, and we run here, oops, I got to print T. At the bottom, after
+59:00
+we've done that, if I could spell the print statement correctly, you can see that now
+59:05
+we just get this massive list that just has 625 zeros. And again, if we wanted to reshape
+59:11
+this to something like 125, and maybe we weren't that good at math, and couldn't figure out that this last value should be five, we could put a negative one, this would mean that TensorFlow
+59:19
+would infer now what the shape needs to be. And now when we look at it, we can see that we're we're going to get is well just simply five kind of sets of these. I don't know matrices,
+59:30
+whatever you want to call them, and our shape is 125. Five. So that is essentially how that
+59:36
+works. So that's how we reshape. That's how we kind of deal with tensors. Create variables,
+59:41
+how that works in terms of sessions and graphs. And hopefully with that, that gives you enough of an understanding of tensors of shapes of ranks a value so that when we move into the
+59:51
+next part of the tutorial, we're actually writing code and I promise we're going to be writing some more advanced code, you'll understand how that works. So with that being
+1:00:03
+said, let's get into the next section. So welcome to Module Three of this course. Now what we're going to be doing in this module is learning the core machine learning algorithms that come with TensorFlow. Now, these algorithms
+1:00:11
+are not specific to TensorFlow, but they are used within there. And we'll use some tools from TensorFlow to kind of implement them. But essentially, these are the building blocks.
+1:00:19
+Before moving on to things like neural networks and more advanced machine learning techniques, you really need to understand how these work because they're kind of used in a lot of different
+1:00:27
+techniques and combined together, and one of them but to show you is actually very powerful if you use it in the right way, a lot of what machine learning actually is and a lot of
+1:00:36
+machine learning algorithms and implementations and businesses and applications and stuff like that, actually just use pretty basic models. Because these models are capable of
+1:00:45
+actually doing, you know, very powerful things. When you're not dealing with anything that's crazy complicated, you just need some basic machine learning some basic classification,
+1:00:53
+you can use these kind of fundamental core learning algorithms. Now, the first one we're going to go through is linear regression. But we will cover classification and clustering
+1:01:01
+in hidden Markov models. And those are kind of going to give us a good spread of the different
+1:01:06
+core algorithms. Now there is a ton ton like 1000s of different machine learning algorithms.

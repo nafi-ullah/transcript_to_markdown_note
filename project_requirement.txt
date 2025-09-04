@@ -1,0 +1,31 @@
+I want to create a ai agent in python, where I will pass a transcript of a lecture video.
+the scripts contains time stamp and the voice timestamp.
+also I will pass the modules of that video transcript.
+
+every module should have a markdown file .md.
+if there are 5 module, then create 5 markdown .md file.
+every file contians the notes of that module.
+suppose, 1st module duration start from 0:0:01 and ends at 1:10:10
+you have to  pass every 10 minutes transcript to gpt chat completition api. it should response the markdown format note of that 10 minutes.
+if the module 1 hour, the chat gpt api will call 60/10 = 6 times. every time it will generate notes and concat the note in that modules markdown file.
+
+
+for example module.txt:
+(00:03:25) Module 1: Machine Learning Fundamentals 
+(00:30:08) Module 2: Introduction to TensorFlow
+(01:00:00) Module 3: Core Learning Algorithms
+(02:45:39) Module 4: Neural Networks with TensorFlow
+(03:43:10) Module 5: Deep Computer Vision - Convolutional Neural Networks
+(04:40:44) Module 6: Natural Language Processing with RNNs
+(06:08:00) Module 7: Reinforcement Learning with Q-Learning
+(06:48:24) Module 8: Conclusion and Next Steps
+
+here Module 1 is from 00:03:25 to 00:30:08. and the module name is Machine Learning Fundamentals 
+so a markdown file named "1 Machine Learning Fundamentals.md" file will be created in notes folder.
+here in this module's file chat gpt will get transcript from transcript.txt file 00:03:25 to 00:13:25 duration.(if 00:13:25 is not exist then use most near times. like 00:13:35) it will return the note of this durations transcript.
+after that it will generate another note from 13:26 to 23:26 duration from the transcript. and this note will be concat with prevous note, as these are in same module.
+
+
+when 30:08 end, it will create another markdown file .md it will take note same way of its module's transcripts.
+as there are module, it should have 8 markdwon files.
+gpt api key will be provided in env.
