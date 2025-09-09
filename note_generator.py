@@ -119,15 +119,17 @@ class TranscriptNoteGenerator:
             line = line.strip()
             if not line:
                 continue
-            
-            # Check if line is a timestamp (format: M:SS or MM:SS or H:MM:SS)
-            if re.match(r'^\d+:\d{2}$', line) or re.match(r'^\d{2}:\d{2}:\d{2}$', line):
+
+            # Accept timestamps like H:MM, H:MM:, H:MM:SS, HH:MM:SS
+            if re.match(r'^\d{1,2}:\d{2}:\d{2}$', line) or re.match(r'^\d{1,2}:\d{2}:$', line) or re.match(r'^\d{1,2}:\d{2}$', line):
+                # Remove trailing colon if present
+                clean_line = line.rstrip(':')
                 # Save previous timestamp data
                 if current_time is not None and current_text:
                     transcript_data[current_time] = ' '.join(current_text)
-                
+
                 # Start new timestamp
-                current_time = self.parse_timestamp(line)
+                current_time = self.parse_timestamp(clean_line)
                 current_text = []
             else:
                 # Add text to current timestamp
@@ -191,7 +193,7 @@ Focus on educational value and clarity. Make the notes comprehensive but concise
 
         try:
             response = self.client.chat.completions.create(
-                model="gpt-3.5-turbo",
+                model="gpt-4o",
                 messages=[
                     {"role": "system", "content": "You are an expert educational note-taker who creates comprehensive, well-structured markdown notes from lecture transcripts."},
                     {"role": "user", "content": prompt}
@@ -225,37 +227,37 @@ Focus on educational value and clarity. Make the notes comprehensive but concise
         
         all_notes = []
         chunk_duration = 600  # 10 minutes in seconds
-        
+
         # Add module header
         all_notes.append(f"# Module {module['number']}: {module_name}\n")
-        
+
         current_start = start_time
         chunk_number = 1
-        
+
         while current_start < end_time:
             current_end = min(current_start + chunk_duration, end_time)
-            
+
             # Find nearest available timestamps
             actual_start = self.find_nearest_timestamp(transcript_data, current_start)
             actual_end = self.find_nearest_timestamp(transcript_data, current_end)
-            
+
             # Get transcript segment
             segment = self.get_transcript_segment(transcript_data, actual_start, actual_end)
-            
+
             if segment.strip():
                 chunk_info = f"Chunk {chunk_number} ({self.seconds_to_timestamp(current_start)} - {self.seconds_to_timestamp(current_end)})"
                 print(f"  Processing {chunk_info}...")
-                
+
                 # Generate notes for this chunk
                 notes = self.generate_notes_with_gpt(segment, module_name, chunk_info)
                 all_notes.append(f"\n## {chunk_info}\n\n{notes}\n")
-                
+
                 # Add a small delay to avoid rate limiting
                 time.sleep(1)
-            
+
             current_start = current_end
             chunk_number += 1
-        
+
         return '\n'.join(all_notes)
     
     def generate_all_notes(self, transcript_file: str, modules_file: str) -> None:
@@ -301,25 +303,25 @@ def main():
     """Main function to run the note generator."""
     try:
         generator = TranscriptNoteGenerator()
-        
+
         # Default file paths
-        transcript_file = "script/demo_transcript.txt"
+        transcript_file = "script/tensorfloow_freecodecamp_complete_corusetranscript.txt"
         modules_file = "demo_module.txt"
-        
+
         # Check if files exist
         if not os.path.exists(transcript_file):
             print(f"❌ Transcript file not found: {transcript_file}")
             return
-        
+
         if not os.path.exists(modules_file):
             print(f"❌ Modules file not found: {modules_file}")
             return
-        
+
         # Generate notes
         generator.generate_all_notes(transcript_file, modules_file)
-        
-    except Exception as e:
-        print(f"❌ Fatal error: {str(e)}")
+
+    except Exception as exc:
+        print(f"❌ Fatal error: {str(exc)}")
         return 1
 
 if __name__ == "__main__":

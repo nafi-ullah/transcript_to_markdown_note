@@ -914,7 +914,7 @@ works. So that's how we reshape. That's how we kind of deal with tensors. Create
 how that works in terms of sessions and graphs. And hopefully with that, that gives you enough of an understanding of tensors of shapes of ranks a value so that when we move into the
 59:51
 next part of the tutorial, we're actually writing code and I promise we're going to be writing some more advanced code, you'll understand how that works. So with that being
-1:00:00
+1:00:03
 said, let's get into the next section. So welcome to Module Three of this course. Now what we're going to be doing in this module is learning the core machine learning algorithms that come with TensorFlow. Now, these algorithms
 1:00:11
 are not specific to TensorFlow, but they are used within there. And we'll use some tools from TensorFlow to kind of implement them. But essentially, these are the building blocks.
@@ -2536,7 +2536,7 @@ And if you need to do some kind of clustering, you now know of one algorithm to 
 models. So in the next module, we're going to start covering neural networks, we now have the knowledge, we need to really dive in there and start doing some cool stuff.
 2:45:28
 And then in the future modules, we're going to do deep computer vision, I believe we're gonna do chatbots with recurrent neural networks, and then some form of reinforcement learning
-2:45:39
+2:45:35
 at the end. So with that being said, let's go to the next module. love everybody, and
 2:45:43
 welcome to module four. Now, in this module of this course, we're gonna be talking about neural networks, discussing how neural networks work, a little bit of the math behind them
@@ -3436,7 +3436,7 @@ here, expected bank, guess back. So that's kind of showing you how we can actual
 Now I did this in about an hour, I'm hoping I explained a good amount that you guys understand now how neural networks work. In the next module, we're going to move on to convolution
 3:42:56
 neural networks, which again, should help you know, kind of get your understanding of neural networks up as well as learn how we can do deep computer vision, object recognition
-3:43:10
+3:43:04
 and detection using convolutional neural networks. So with that being said, let's get into the next module. Hello, everyone, and welcome to the next module in this TensorFlow course.
 3:43:17
 So what we're gonna be doing here is talking about deep computer vision, which is very exciting, very cool. This has been used for all kinds of things you ever seen the self
@@ -4308,7 +4308,7 @@ and that global average layer. And hopefully, you should get a decent result fro
 depending on what kind of problem you're trying to solve. So anyways, that has been conditional neural networks. I hope you enjoyed that module. Now we're on to recurrent
 4:40:40
 neural networks, which is actually gonna be pretty interesting. So see you in that module.
-4:40:44
+4:40:47
 Hello, everyone, and welcome to the next module in this course, which is covering natural language processing with recurrent neural networks. Now, what we're going to be doing
 4:40:55
 in this module here is, first of all, first off discussing what natural language processing
@@ -5664,7 +5664,7 @@ and hopefully give you enough knowledge to the fact where if you're confused by 
 more important details for yourself, because I really just I can't go into all you know, the extremes in these videos. So anyways, that has been this section. I hope you guys
 6:07:52
 enjoyed doing this, I thought this was pretty cool. And in the next section, we're gonna be talking about reinforcement learning. Hello, everyone, and welcome to the next module in
-6:08:00
+6:08:03
 this course on reinforcement learning. So what we're gonna be doing in this module is talking about another technique in machine learning called reinforcement learning. Now,
 6:08:10
 if you remember, at the very beginning of this course, which I know for you guys is probably at like six hours ago, at this point, we did briefly discuss what reinforcement
@@ -6302,7 +6302,7 @@ you thinking about how reinforcement learning works. And potentially, if you'd l
 at in terms of reinforcement learning. So that being said, that has been this module. And now we're going to move into the conclusion we'll we'll talk about some next steps and
 6:48:19
 some more things that you guys can look at to improve your machine learning skills. So
-6:48:24
+6:48:26
 finally, after about seven hours, of course content, we have reached the conclusion of
 6:48:32
 this course. Now, what I'm going to do in this last brief short section is just explained
